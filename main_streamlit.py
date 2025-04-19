@@ -1,7 +1,7 @@
 import streamlit as st
 from transformers import pipeline
 
-generator = pipeline("text-generation", model="thainq107/med-mcqa-llama-3.2-1B-4bit-lora")
+generator = pipeline("text-generation", model="thainq107/med-mcqa-llama-3.2-1B-4bit-lora", device=-1)
 
 def main():
     st.title('Multiple-choice Question Answering')
