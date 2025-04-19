@@ -17,6 +17,7 @@ def main():
     """
     text_input = st.text_input("Prompt: ", question)
     # output = generator(text_input, max_new_tokens=128, return_full_text=False)
+    st.write(text_input)
     st.write("D Local anesthesia is effective only when the nerve is not covered by myelin sheath")
 
 if __name__ == '__main__':
