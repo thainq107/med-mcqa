@@ -1,7 +1,7 @@
 import streamlit as st
 from transformers import pipeline
 
-# generator = pipeline("text-generation", model="thainq107/med-mcqa-llama-3.2-1B-4bit-lora")
+generator = pipeline("text-generation", model="thainq107/med-mcqa-llama-3.2-1B-4bit-lora")
 
 def main():
     st.title('Multiple-choice Question Answering')
@@ -16,9 +16,9 @@ def main():
     ### Answer:\n
     """
     text_input = st.text_input("Prompt: ", question)
-    # output = generator(text_input, max_new_tokens=128, return_full_text=False)
+    output = generator(text_input, max_new_tokens=128, return_full_text=False)
     st.write(text_input)
-    st.write("D Local anesthesia is effective only when the nerve is not covered by myelin sheath")
+    st.write(output["generated_text"])
 
 if __name__ == '__main__':
     main()
